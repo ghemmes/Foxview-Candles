@@ -63,3 +63,6 @@ export const EDIT_USER = 'EDIT_USER';
 export const LOADING = 'LOADING';
 export const IS_AUTHENTICATING = 'IS_AUTHENTICATING';
 export const SET_REQUEST_STATUS = 'SET_REQUEST_STATUS';
+
+
+// export const ADMIN_USERS = 'ADMIN_USERS';

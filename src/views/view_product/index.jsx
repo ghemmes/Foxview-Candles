@@ -102,24 +102,46 @@ const ViewProduct = () => {
               <br />
               <span className="text-subtle">{product.brand}</span>
               <h1 className="margin-top-0">{product.name}</h1>
+              
+              {/* add | character between  */}
+              
               <span>{product.description}</span>
               <br />
               <br />
               <div className="divider" />
               <br />
-              <div>
+              {/* <div>
                 <span className="text-subtle">Lens Width and Frame Size</span>
                 <br />
                 <br />
                 <Select
-                  placeholder="--Select Size--"
+                  placeholder="--Select Scent--"
                   onChange={onSelectedSizeChange}
                   options={product.sizes.sort((a, b) => (a < b ? -1 : 1)).map((size) => ({ label: `${size} mm`, value: size }))}
                   styles={{ menu: (provided) => ({ ...provided, zIndex: 10 }) }}
                 />
-              </div>
+              </div> */}
+              <span className="text-subtle">Candle weight</span>
               <br />
-              {product.availableColors.length >= 1 && (
+              <br />
+              <span>{product.sizes} oz</span>
+              <br />
+              <br />
+              <div>
+                <span className="text-subtle">Choose a Scent </span>
+                <br />
+                <br />
+                <Select
+                  placeholder="--Select Scent--"
+                  onChange={onSelectedSizeChange}
+                  options={product.keywords.sort().map((keyword) => ({ value: keyword, label: keyword }))}
+                  styles={{ menu: (provided) => ({ ...provided, zIndex: 10 }) }}
+                />
+              </div>
+
+
+              <br />
+              {/* {product.availableColors.length >= 1 && (
                 <div>
                   <span className="text-subtle">Choose Color</span>
                   <br />
@@ -129,7 +151,7 @@ const ViewProduct = () => {
                     onSelectedColorChange={onSelectedColorChange}
                   />
                 </div>
-              )}
+              )} */}
               <h1>{displayMoney(product.price)}</h1>
               <div className="product-modal-action">
                 <button
@@ -144,7 +166,7 @@ const ViewProduct = () => {
           </div>
           <div style={{ marginTop: '10rem' }}>
             <div className="display-header">
-              <h1>Recommended</h1>
+              <h1>Best Sellers</h1>
               <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
             </div>
             {errorFeatured && !isLoadingFeatured ? (

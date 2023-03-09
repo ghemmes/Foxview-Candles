@@ -1,4 +1,6 @@
 import { ADMIN_PRODUCTS } from '@/constants/routes';
+import { ADMIN_USERS } from '@/constants/routes';
+import { ADMIN_DASHBOARD } from '@/constants/routes';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -11,11 +13,26 @@ const SideNavigation = () => (
           className="sidenavigation-menu"
           to={ADMIN_PRODUCTS}
         >
-          Products
+          Candles
         </NavLink>
       </div>
       <div className="sidenavigation-item">
-        <h4 className="sidenavigation-menu my-0">Users</h4>
+        <h4 className="sidenavigation-menu my-0"></h4>
+        {/* <NavLink
+          activeClassName="sidenavigation-menu-active"
+          className="sidenavigation-menu"
+          to={ADMIN_USERS}
+        >
+          Users
+        </NavLink> */}
+        <NavLink
+          activeClassName="sidenavigation-menu-active"
+          className="sidenavigation-menu"
+          to={ADMIN_DASHBOARD}
+        >
+          Dashboard
+        </NavLink>
+
       </div>
     </div>
   </aside>

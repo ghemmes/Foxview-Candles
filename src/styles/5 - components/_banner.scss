@@ -3,7 +3,7 @@
     height: 40rem;
     margin-top: 2rem;
    
-    background: #f3f3f3;
+    background: $banner-bg;
     display: flex;
 
     @include mobile {

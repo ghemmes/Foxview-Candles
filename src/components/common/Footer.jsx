@@ -15,26 +15,26 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-col-1">
         <strong>
-          <span>
+          {/* <span>
             Developed by
             {' '}
             <a href="https://github.com/jgudo">JULIUS GUEVARRA</a>
-          </span>
+          </span> */}
         </strong>
       </div>
       <div className="footer-col-2">
         <img alt="Footer logo" className="footer-logo" src={logo} />
         <h5>
           &copy;&nbsp;
-          {new Date().getFullYear()}
+          {"Foxview Candles "+ new Date().getFullYear()}
         </h5>
       </div>
       <div className="footer-col-3">
         <strong>
-          <span>
+          {/* <span>
             Fork this project &nbsp;
             <a href="https://github.com/jgudo/ecommerce-react">HERE</a>
-          </span>
+          </span> */}
         </strong>
       </div>
     </footer>

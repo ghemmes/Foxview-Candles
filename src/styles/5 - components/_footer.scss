@@ -2,10 +2,12 @@
   position: relative;
   padding: 0 $xxl-size;
   margin-top: $xl-size;
-  background: $off-white;
+  background: $banner-bg ;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 200% !important;
+  margin-left: -50%;
 
   @include mobile {
     padding: 0;

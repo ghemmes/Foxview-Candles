@@ -35,11 +35,21 @@
 
 .is-nav-scrolled {
   position: fixed;
-  animation: slide-down .3s ease 1;
-  animation-fill-mode: forwards;
+  // animation: slide-down .3s ease 1;
+  // animation-fill-mode: forwards;
   top: 0;
   height: 6rem;
+  // center nav 
+  // left: 50%;
+  // transform: translateX(-50%);
+  // no animation
+  // top: 0;
+
+
+
+  
+  width: 80%;
   padding-top: .5rem;
-  background: $nav-bg-scrolled;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .02);
+  background: clear;
+  // box-shadow: 0 5px 10px rgba(0, 0, 0, .02);
 }

@@ -5,7 +5,7 @@ const MessageDisplay = ({
   message, description, buttonLabel, action
 }) => (
   <div className="loader">
-    <h2 className="text-center" style={{ wordBreak: 'break-all' }}>{message || 'Message'}</h2>
+    <h2 className="text-center" style={{ wordBreak: 'break-all' }}>{message || 'Cannot load Candles'}</h2>
     {description && <span>{description}</span>}
     <br />
     {action && (

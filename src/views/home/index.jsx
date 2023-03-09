@@ -5,13 +5,16 @@ import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/route
 import {
   useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
 } from '@/hooks';
-import bannerImg from '@/images/banner-girl.png';
+// import bannerImg from '@/images/banner-girl.png';
+import bannerImg from '@/images/DSC_1068311.png';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ContactForm from './ContactForm';
+
 
 
 const Home = () => {
-  useDocumentTitle('Salinaka | Home');
+  useDocumentTitle('Foxview Candle | Home');
   useScrollTop();
 
   const {
@@ -51,7 +54,7 @@ const Home = () => {
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Featured Products</h1>
+            <h1>Candle Highlights</h1>
             <Link to={FEATURED_PRODUCTS}>See All</Link>
           </div>
           {(errorFeatured && !isLoadingFeatured) ? (
@@ -69,7 +72,7 @@ const Home = () => {
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Recommended Products</h1>
+            <h1>Best Sellers </h1>
             <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
           </div>
           {(errorRecommended && !isLoadingRecommended) ? (
@@ -85,7 +88,17 @@ const Home = () => {
             />
           )}
         </div>
+        <div className="contact-form-container">
+          <h1>Contact Us</h1>
+            <div className="contact-form-header">            
+            
+            <ContactForm />
+            </div>
+          </div>
       </div>
+
+
+      
     </main>
   );
 };

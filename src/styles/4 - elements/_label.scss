@@ -6,6 +6,7 @@ label {
     padding: $s-size $m-size;
     display: inline-block;
     position: relative;
+
     
     &:hover {
         cursor: pointer;
@@ -19,6 +20,7 @@ label {
     padding: 1rem 1.2rem;
     color: #696868;
     border: none;
+
 
     &:hover {
         background: none;

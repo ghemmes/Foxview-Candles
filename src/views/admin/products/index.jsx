@@ -10,7 +10,7 @@ import { ProductsNavbar } from '../components';
 import ProductsTable from '../components/ProductsTable';
 
 const Products = () => {
-  useDocumentTitle('Product List | Salinaka Admin');
+  useDocumentTitle('tese List | Salinaka Admin');
   useScrollTop();
 
   const store = useSelector((state) => ({
@@ -26,12 +26,14 @@ const Products = () => {
         productsCount={store.products.items.length}
         totalProductsCount={store.products.total}
       />
+      {/* <div>hiiiiiiiiiiiiiiiiiiiii</div> */}
       <div className="product-admin-items">
         <ProductList {...store}>
           <AppliedFilters filter={store.filter} />
           <ProductsTable filteredProducts={store.filteredProducts} />
         </ProductList>
       </div>
+      
     </Boundary>
   );
 };

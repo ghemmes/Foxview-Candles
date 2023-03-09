@@ -39,18 +39,13 @@ const BasketItem = ({ product }) => {
               <h5 className="my-0">
                 {product.selectedSize}
                 {' '}
-                mm
+                oz
               </h5>
             </div>
             <div>
-              <span className="spec-title">Color</span>
-              <div style={{
-                backgroundColor: product.selectedColor || product.availableColors[0],
-                width: '15px',
-                height: '15px',
-                borderRadius: '50%'
-              }}
-              />
+              <span className="spec-title">Category</span>
+              {/* display category */}
+              <h5 className="my-0">{product.brand}</h5>
             </div>
           </div>
         </div>

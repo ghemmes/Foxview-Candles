@@ -7,6 +7,7 @@ import {
   SEARCH_PRODUCT
 } from '@/constants/constants';
 import { ADMIN_PRODUCTS } from '@/constants/routes';
+import { ADMIN_USERS } from '@/constants/routes';
 import { displayActionMessage } from '@/helpers/utils';
 import {
   all, call, put, select
@@ -20,6 +21,8 @@ import {
   removeProductSuccess,
   searchProductSuccess
 } from '../actions/productActions';
+
+
 
 function* initRequest() {
   yield put(setLoading(true));

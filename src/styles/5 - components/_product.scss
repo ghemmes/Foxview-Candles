@@ -1,7 +1,8 @@
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  grid-gap: $s-size;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  //   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-gap: $l-size;
   justify-content: center;
 
   @include mobile {
@@ -48,8 +49,8 @@
 }
 
 .product-card {
-  max-width: 180px;
-  height: 230px;
+  max-width: 300px;
+  height: 350px;
   border: 1px solid $border-color;
   text-align: center;
   position: relative;
@@ -77,7 +78,7 @@
 }
 
 .product-card:hover .product-card-img-wrapper {
-  height: 8rem;
+  height: 14rem;
   padding: 1rem;
 }
 
@@ -113,7 +114,7 @@
 
 .product-card-img-wrapper {
   width: 100%;
-  height: 100px;
+  height: 180px;
   padding: 0 $m-size;
   margin: auto;
   position: relative;
@@ -557,3 +558,409 @@
     margin-top: 0;
   }
 }
+
+
+// ---------------------------- CONTACT FORM ----------------------------
+
+.contact-form-container {
+margin: 5rem;
+margin-top: 10rem;
+
+
+@include mobile {
+  margin: 0;
+}
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1.2px solid $border-color;
+}
+
+.contact-info {
+  background-color: $banner-bg;
+  color: white;
+  // padding on left and right
+  padding: 2rem 4rem;
+
+}
+
+.contact-form {
+  padding: 3rem 4rem;
+}
+
+
+
+
+// .contact-info-header1 {
+// // bring text to top of div
+
+//   text-align: left;
+// }
+
+// .contact-container {
+//   display: flex;
+//   // justify-content: space-between;
+//   background: $banner-bg;
+//   justify-content: center;
+//   align-items: center;
+//   border: 1.2px solid $border-color;
+
+// }
+
+// .contact-form {
+//   width: 50%;
+//   height: 100%;
+//   background: $banner-bg-01;
+//   padding: 30px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   text-align: center;
+// }
+
+
+
+// // }
+// .contact-info {
+//   width: 50%;
+//   height: auto;
+
+//   // bring to top of div
+//   text-align: left;
+
+
+
+// }
+
+
+.contact-form-header label {
+  display: block;
+  font-weight: bold;
+  padding:5px;
+  background: $banner-bg-01;
+  border: 0;
+}
+
+.contact-form-header input,
+.contact-form-header textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(223, 223, 223);
+  background: #f8f7f3;
+}
+.contact-form-header textarea {
+  height: 150px;
+}
+
+.contact-form-button {
+  text-align: right;
+  padding: 5px;
+}
+
+.contact-form-button button {
+  padding: 10px 20px;
+  background-color: #dcd7c3;
+  color: #261508;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .contact-form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   width: 80%;
+//   margin: 50px auto;
+//   padding: 30px;
+//   border: 1px solid lightgray;
+//   border-radius: 10px;
+//   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+// }
+
+// .contact-form form {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   width: 100%;
+// }
+
+// .contact-form-header {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin: 20px 0;
+//   width: 100%;
+// }
+
+// .contact-form-header label {
+//   font-size: 18px;
+//   font-weight: bold;
+//   margin-bottom: 10px;
+//   text-align: left;
+// }
+
+// .contact-form-header input,
+// .contact-form-header textarea {
+//   width: 100%;
+//   padding: 10px;
+//   font-size: 16px;
+//   border-radius: 5px;
+//   border: 1px solid lightgray;
+//   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+//   resize: none;
+// }
+
+// .contact-form-button {
+//   margin-top: 20px;
+// }
+
+// .contact-form-button button {
+//   padding: 10px 20px;
+//   background-color: blue;
+//   color: white;
+//   border: none;
+//   border-radius: 5px;
+//   font-size: 16px;
+//   font-weight: bold;
+//   cursor: pointer;
+//   transition: all 0.2s ease-in-out;
+// }
+
+// .contact-form-button button:hover {
+//   background-color: lightblue;
+// }
+
+
+
+// .contact-form {
+//   width: 100%;
+//   margin: 5rem auto;
+//   margin-top: 10rem;
+//   padding: 2rem;
+//   text-align: center;
+
+//   @include mobile {
+//     margin: 0;
+//   }
+// } 
+
+
+
+// .contact-form {
+//   width: 100%;
+//   margin: 5rem auto;
+//   margin-top: 10rem;
+//   padding: 2rem;
+//   text-align: center;
+
+//   @media (max-width: 767px) {
+//     margin: 0;
+//   }
+// }
+
+//   .contact-form-header {
+//     h1 {
+//       font-size: 36px;
+//       font-weight: bold;
+//       margin-bottom: 1rem;
+//       color: #333;
+//     }
+//     p {
+//       font-size: 18px;
+//       margin-bottom: 2rem;
+//       color: #333;
+//     }
+//   }
+
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     width: 80%;
+//     margin: 0 auto;
+//     padding: 2rem;
+//     background-color: #f9f9f9;
+//     border-radius: 10px;
+//     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+//     label,
+//     input,
+//     textarea {
+//       font-size: 16px;
+//       margin-bottom: 1rem;
+//       color: #333;
+//       width: 100%;
+//       padding: 0.5rem;
+//       border-radius: 5px;
+//       border: 1px solid #ddd;
+//       box-sizing: border-box;
+//     }
+
+//     label {
+//       font-weight: bold;
+//       margin-bottom: 0.5rem;
+//     }
+
+//     input,
+//     textarea {
+//       &:focus {
+//         outline: none;
+//         border-color: #3498db;
+//       }
+//     }
+
+//     textarea {
+//       height: 150px;
+//     }
+
+//     button[type='submit'] {
+//       background-color: #3498db;
+//       color: white;
+//       padding: 0.75rem 1rem;
+//       border: none;
+//       border-radius: 5px;
+//       cursor: pointer;
+//       font-weight: bold;
+//       margin-top: 1rem;
+//       width: 100%;
+
+//       &:hover {
+//         background-color: #2980b9;
+//       }
+//     }
+//   }
+// }
+
+
+// .contact-form-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+
+//   .contact-form-context {
+//     width: 50%;
+//     background-color: #f2f2f2;
+//     padding: 3rem;
+//     border-radius: 1rem;
+
+//     form {
+//       text-align: center;
+
+//       .form-floating {
+//         position: relative;
+
+//         label {
+//           position: absolute;
+//           top: 0;
+//           left: 0;
+//           font-size: 1rem;
+//           color: gray;
+//           transition: all 0.3s;
+//         }
+
+//         input {
+//           width: 100%;
+//           padding: 1.5rem 1rem;
+//           font-size: 1.2rem;
+//           border-radius: 0.5rem;
+//           border: none;
+//           border-bottom: 2px solid gray;
+//           transition: all 0.3s;
+
+//           &:focus + label, &:valid + label {
+//             top: -1.5rem;
+//             font-size: 0.8rem;
+//             color: #1d3557;
+//           }
+//         }
+//       }
+
+//       textarea {
+//         width: 100%;
+//         padding: 1.5rem 1rem;
+//         font-size: 1.2rem;
+//         border-radius: 0.5rem;
+//         border: 2px solid gray;
+//         resize: none;
+//         transition: all 0.3s;
+
+//         &:focus + label, &:valid + label {
+//           top: -1.5rem;
+//           font-size: 0.8rem;
+//           color: #1d3557;
+//         }
+//       }
+
+//       label {
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         font-size: 1rem;
+//         color: gray;
+//         transition: all 0.3s;
+//       }
+
+//       input, textarea {
+//         &:focus, &:valid {
+//           outline: none;
+//           box-shadow: 0 0 10px #1d3557;
+//         }
+//       }
+
+//       button {
+//         width: 20%;
+//         padding: 1rem;
+//         background-color: #1d3557;
+//         color: #fff;
+//         border: none;
+//         border-radius: 0.5rem;
+//         font-size: 1.2rem;
+//         transition: all 0.3s;
+//         cursor: pointer;
+
+//         &:hover {
+//           background-color: #457b9d;
+//         }
+//       }
+
+//       p {
+//         font-size: 1.2rem;
+//         a {
+//           color: #1d3557;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
