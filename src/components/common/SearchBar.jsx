@@ -66,7 +66,7 @@ const SearchBar = () => {
 
   return (
     <>
-      <div className="searchbar" ref={searchbarRef}>
+      {/* <div className="searchbar" ref={searchbarRef}>
         <SearchOutlined className="searchbar-icon" />
         <input
           className="search-input searchbar-input"
@@ -113,7 +113,7 @@ const SearchBar = () => {
             ))}
           </div>
         )}
-      </div>
+      </div> */}
     </>
   );
 };

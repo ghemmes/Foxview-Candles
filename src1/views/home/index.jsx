@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 const Home = () => {
-  useDocumentTitle('Foxview Candles | Home');
+  useDocumentTitle('Foxview Candles | Homesss');
   useScrollTop();
 
   const {

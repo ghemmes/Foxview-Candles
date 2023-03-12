@@ -345,6 +345,35 @@
 
 
 
+
+
+// Autumn Harvest
+// Black Cherry Merlot
+// Blueberry Cobbler
+// Chocolate Cherry + Nut
+// Cinnamon Buns
+// Coffee Shop
+// Cozy Cottage
+// Cranberry Cobbler
+// Hansel & Gretel
+// Holiday Sangria
+// Love Spell
+// Malibu Rum
+// Mandarin Mimosa
+// Mai Tai
+// Pine
+// Snickerdoodle
+// Strudel & Spice
+// Vanilla / Black Currant
+
+
+
+
+
+
+
+
+
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { CheckOutlined, LoadingOutlined } from '@ant-design/icons';
 import { ImageLoader } from '@/components/common';
@@ -359,6 +388,10 @@ import PropType from 'prop-types';
 import React from 'react';
 import * as Yup from 'yup';
 
+
+
+
+
 // Default brand names that I used. You can use what you want
 const brandOptions = [
   { value: '1 Wick', label: '1 Wick' },
@@ -367,6 +400,33 @@ const brandOptions = [
   { value: 'Glass', label: 'Glass' },
   { value: 'Other', label: 'Other' }
 ];
+
+const scentOptions = [
+  { value: 'Autumn Harvest', label: 'Autumn Harvest' },
+  { value: 'Black Cherry Merlot', label: 'Black Cherry Merlot' },
+  { value: 'Blueberry Cobbler', label: 'Blueberry Cobbler' },
+  { value: 'Chocolate Cherry + Nut', label: 'Chocolate Cherry + Nut' },
+  { value: 'Cinnamon Buns', label: 'Cinnamon Buns' },
+  { value: 'Coffee Shop', label: 'Coffee Shop' },
+  { value: 'Cozy Cottage', label: 'Cozy Cottage' },
+  { value: 'Cranberry Cobbler', label: 'Cranberry Cobbler' },
+  { value: 'Hansel & Gretel', label: 'Hansel & Gretel' },
+  { value: 'Holiday Sangria', label: 'Holiday Sangria' },
+  { value: 'Love Spell', label: 'Love Spell' },
+  { value: 'Malibu Rum', label: 'Malibu Rum' },
+  { value: 'Mandarin Mimosa', label: 'Mandarin Mimosa' },
+  { value: 'Mai Tai', label: 'Mai Tai' },
+  { value: 'Pine', label: 'Pine' },
+  { value: 'Snickerdoodle', label: 'Snickerdoodle' },
+  { value: 'Strudel & Spice', label: 'Strudel & Spice' },
+  { value: 'Vanilla / Black Currant', label: 'Vanilla / Black Currant' }
+];
+
+function updateScentOptions() {
+  const newScentOption = { value: 'New Scent', label: 'New Scent' };
+  const updatedScentOptions = scentOptions.concat(newScentOption);
+  // do something with updatedScentOptions
+}
 
 const FormSchema = Yup.object().shape({
   name: Yup.string()
@@ -424,8 +484,13 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
     removeImage
   } = useFileHandler({ image: {}, imageCollection: product?.imageCollection || [] });
 
+
+
+
+
+
   const onSubmitForm = (form) => {
-    if (imageFile.image.file || product.imageUrl) {
+    if (1==1) {
       onSubmit({
         ...form,
         quantity: 1,
@@ -433,14 +498,21 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
         // of name here instead in firebase functions
         name_lower: form.name.toLowerCase(),
         dateAdded: new Date().getTime(),
-        image: imageFile?.image?.file || product.imageUrl,
-        imageCollection: imageFile.imageCollection
+        image: imageFile.image.url || product?.image || '',
+        imageCollection: imageFile.imageCollection.map((img) => img.url)
+
       });
     } else {
       // eslint-disable-next-line no-alert
+  
       alert('Product thumbnail image is required.');
     }
   };
+
+  // function MyImageCollection({ images, onRemove }) {
+  //   function handleRemoveClick(index) {
+  //     onRemove(index);
+  //   }
 
 
   return (
@@ -519,6 +591,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     name="keywords"
                     iid="keywords"
                     isMulti
+                    options={scentOptions}
                     disabled={isLoading}
                     placeholder="Create/Select Scents"
                     label="* Scents"
@@ -530,7 +603,9 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     defaultValue={values.sizes.map((key) => ({ value: key, label: key }))}
                     name="sizes"
                     iid="sizes"
-                    type="number"
+                    type="float"
+                    // allow decimals
+
                     // name="keywords"
                     // iid="keywords"
                     isMulti
@@ -562,6 +637,7 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                     />
                     Choose Images
                   </label>
+                  // add button to delete image from collection
                 )}
               </div>
               <div className="product-form-collection">
@@ -576,15 +652,16 @@ const ProductForm = ({ product, onSubmit, isLoading }) => {
                           alt=""
                           src={image.url}
                         />
-                        <button
+                          <button
                           className="product-form-delete-image"
                           onClick={() => removeImage({ id: image.id, name: 'imageCollection' })}
                           title="Delete Image"
                           type="button"
                         >
-                          <i className="fa fa-times-circle" />
+                          <i className="fa fa-times-circle"  />Delete 
                         </button>
                       </div>
+                      
                     ))
                   )}
                 </>

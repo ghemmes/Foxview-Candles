@@ -14,7 +14,7 @@ import ContactForm from './ContactForm';
 
 
 const Home = () => {
-  useDocumentTitle('Foxview Candle | Home');
+  useDocumentTitle('Foxview Candles | Home');
   useScrollTop();
 
   const {
