@@ -1,5 +1,6 @@
 import { BasketToggle } from '@/components/basket';
-import { HOME, SIGNIN } from '@/constants/routes';
+import { FilterOutlined, MenuOutlined, ShoppingOutlined } from '@ant-design/icons';
+import { HOME, SIGNIN, SHOP } from '@/constants/routes';
 import PropType from 'prop-types';
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -7,6 +8,8 @@ import UserNav from '@/views/account/components/UserAvatar';
 import Badge from './Badge';
 import FiltersToggle from './FiltersToggle';
 import SearchBar from './SearchBar';
+
+
 
 const Navigation = (props) => {
   const {
@@ -18,6 +21,8 @@ const Navigation = (props) => {
     if (isAuthenticating) e.preventDefault();
   };
 
+  
+
   return (
     <nav className="mobile-navigation">
       <div className="mobile-navigation-main">
@@ -26,8 +31,7 @@ const Navigation = (props) => {
             <h2>Foxview Candle</h2>
           </Link>
         </div>
-
-        <BasketToggle>
+  <BasketToggle>
           {({ onClickToggle }) => (
             <button
               className="button-link navigation-menu-link basket-toggle"
@@ -35,15 +39,26 @@ const Navigation = (props) => {
               disabled={disabledPaths.includes(pathname)}
               type="button"
             >
-
               <Badge count={basketLength}>
-                <i className="fa fa-shopping-bag" style={{ fontSize: '2rem' }} />
+                <ShoppingOutlined style={{ fontSize: '2.4rem' }} />
               </Badge>
             </button>
           )}
         </BasketToggle>
+        <div className="dropdown">
+  <button className="dropbtn">
+    <MenuOutlined style={{ fontSize: '2rem' }} />
+  </button>
+  <div className="dropdown-content">
+    <Link to={HOME}>Home</Link>
+    <Link to={SHOP}>Shop</Link>
+    <Link to={SIGNIN}>Sign In</Link>
+  </div>
+</div>
+
+      
         <ul className="mobile-navigation-menu">
-          {user ? (
+          {/* {user ? (
             <li className="mobile-navigation-item">
               <UserNav />
             </li>
@@ -61,7 +76,7 @@ const Navigation = (props) => {
                 </li>
               )}
             </>
-          )}
+          )} */}
         </ul>
       </div>
       <div className="mobile-navigation-sec">
@@ -71,6 +86,7 @@ const Navigation = (props) => {
             <i className="fa fa-filter" />
           </button>
         </FiltersToggle>
+        
       </div>
     </nav>
   );
@@ -87,3 +103,99 @@ Navigation.propTypes = {
 };
 
 export default Navigation;
+
+
+
+
+
+
+
+// import { BasketToggle } from '@/components/basket';
+// import { HOME, SIGNIN } from '@/constants/routes';
+// import PropType from 'prop-types';
+// import React from 'react';
+// import { Link, useLocation } from 'react-router-dom';
+// import UserNav from '@/views/account/components/UserAvatar';
+// import Badge from './Badge';
+// import FiltersToggle from './FiltersToggle';
+// import SearchBar from './SearchBar';
+
+// const Navigation = (props) => {
+//   const {
+//     isAuthenticating, basketLength, disabledPaths, user
+//   } = props;
+//   const { pathname } = useLocation();
+
+//   const onClickLink = (e) => {
+//     if (isAuthenticating) e.preventDefault();
+//   };
+
+//   return (
+//     <nav className="mobile-navigation">
+//       <div className="mobile-navigation-main">
+//         <div className="mobile-navigation-logo">
+//           <Link onClick={onClickLink} to={HOME}>
+//             <h2>Foxview Candle</h2>
+//           </Link>
+//         </div>
+
+//         <BasketToggle>
+//           {({ onClickToggle }) => (
+//             <button
+//               className="button-link navigation-menu-link basket-toggle"
+//               onClick={onClickToggle}
+//               disabled={disabledPaths.includes(pathname)}
+//               type="button"
+//             >
+
+//               <Badge count={basketLength}>
+//                 <i className="fa fa-shopping-bag" style={{ fontSize: '2rem' }} />
+//               </Badge>
+//             </button>
+//           )}
+//         </BasketToggle>
+//         <ul className="mobile-navigation-menu">
+//           {user ? (
+//             <li className="mobile-navigation-item">
+//               <UserNav />
+//             </li>
+//           ) : (
+//             <>
+//               {pathname !== SIGNIN && (
+//                 <li className="mobile-navigation-item">
+//                   <Link
+//                     className="navigation-menu-link"
+//                     onClick={onClickLink}
+//                     to={SIGNIN}
+//                   >
+//                     Sign In
+//                   </Link>
+//                 </li>
+//               )}
+//             </>
+//           )}
+//         </ul>
+//       </div>
+//       <div className="mobile-navigation-sec">
+//         <SearchBar />
+//         <FiltersToggle>
+//           <button className="button-link button-small" type="button">
+//             <i className="fa fa-filter" />
+//           </button>
+//         </FiltersToggle>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// Navigation.propTypes = {
+//   isAuthenticating: PropType.bool.isRequired,
+//   basketLength: PropType.number.isRequired,
+//   disabledPaths: PropType.arrayOf(PropType.string).isRequired,
+//   user: PropType.oneOfType([
+//     PropType.bool,
+//     PropType.object
+//   ]).isRequired
+// };
+
+// export default Navigation;

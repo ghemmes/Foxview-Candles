@@ -37,6 +37,7 @@
     background: none;
     border: none;
   }
+  
 }
 
 .button-muted {
@@ -98,5 +99,9 @@
 
   & * {
     font-size: inherit;
+  }
+  // add media query for mobile
+  @media (max-width: 768px) {
+    padding: 0;
   }
 }

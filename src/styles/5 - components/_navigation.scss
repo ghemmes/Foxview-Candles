@@ -19,7 +19,8 @@
 
   @include mobile {
     padding: 0 $s-size;
-    position: fixed;
+    height: 6rem;
+    width: 10%;
   }
 
   .logo {

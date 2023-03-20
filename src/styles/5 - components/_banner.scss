@@ -1,3 +1,26 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ***********************************
 .banner {
     width: 100%;
     height: 40rem;
@@ -9,6 +32,9 @@
     @include mobile {
         height: auto;
         flex-direction: column;
+        text-align: center;
+        // full width banner
+        
     }
 }
 
@@ -19,9 +45,11 @@
     flex-direction: column;
     padding: 5rem;
     flex-basis: 50%;
+    box-sizing: border-box;
 
     @include mobile {
-        padding: 5rem 0;
+        padding: 3rem;
+        text-align: center;
     }
 
     h1 {
@@ -31,6 +59,8 @@
 
         @include mobile {
             width: 100%;
+            font-size: 3.6rem;
+            text-align: center;
         }
     }
 }
@@ -47,5 +77,19 @@
         height: 100%;
         object-fit: cover;
         transform: translateX(5rem)
+
+        // mobile view has no image
+       
+    } @include mobile {
+            display: none;
+        }
+}
+// mobile view center button
+.button {
+    // margin: 0 auto;
+    // margin-top: 2rem;
+    @include mobile {
+        margin: 0 auto;
+        margin-top: 2rem;
     }
 }

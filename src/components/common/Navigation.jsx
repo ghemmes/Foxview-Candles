@@ -63,6 +63,7 @@ const Navigation = () => {
         {...store}
         disabledPaths={basketDisabledpathnames}
         pathname={pathname}
+
       />
     );
   }

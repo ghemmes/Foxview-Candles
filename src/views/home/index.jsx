@@ -36,13 +36,14 @@ const Home = () => {
         <div className="banner">
           <div className="banner-desc">
             <h1 className="text-thin">
-              <strong>See</strong>
-              &nbsp;everything with&nbsp;
-              <strong>Clarity</strong>
+              <strong>Soy</strong>
+              &nbsp;all natural&nbsp;
+              <strong>Candles</strong>
             </h1>
             <p>
-              Buying eyewear should leave you happy and good-looking, with money in your pocket.
-              Glasses, sunglasses, and contacts—we’ve got your eyes covered.
+            From warm and cozy to fresh and invigorating, we've got the perfect scent to light up your space. 
+            Our candles are made with high-quality ingredients and are designed to bring you joy and relaxation. 
+            Shop now and experience the clarity that comes with a beautifully scented home.
             </p>
             <br />
             <Link to={SHOP} className="button">
@@ -55,7 +56,7 @@ const Home = () => {
         <div className="display">
           <div className="display-header">
             <h1>Candle Highlights</h1>
-            <Link to={FEATURED_PRODUCTS}>See All</Link>
+            {/* <Link to={FEATURED_PRODUCTS}>See All</Link> */}
           </div>
           {(errorFeatured && !isLoadingFeatured) ? (
             <MessageDisplay
@@ -73,7 +74,7 @@ const Home = () => {
         <div className="display">
           <div className="display-header">
             <h1>Best Sellers </h1>
-            <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
+            {/* <Link to={RECOMMENDED_PRODUCTS}>See All Candles</Link> */}
           </div>
           {(errorRecommended && !isLoadingRecommended) ? (
             <MessageDisplay
