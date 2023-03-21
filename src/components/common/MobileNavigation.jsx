@@ -2,14 +2,13 @@ import { BasketToggle } from '@/components/basket';
 import { FilterOutlined, MenuOutlined, ShoppingOutlined } from '@ant-design/icons';
 import { HOME, SIGNIN, SHOP } from '@/constants/routes';
 import PropType from 'prop-types';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserNav from '@/views/account/components/UserAvatar';
 import Badge from './Badge';
 import FiltersToggle from './FiltersToggle';
 import SearchBar from './SearchBar';
-
-
+import logo from '@/images/logo-full.png';
 
 const Navigation = (props) => {
   const {
@@ -21,17 +20,29 @@ const Navigation = (props) => {
     if (isAuthenticating) e.preventDefault();
   };
 
-  
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="mobile-navigation">
       <div className="mobile-navigation-main">
         <div className="mobile-navigation-logo">
-          <Link onClick={onClickLink} to={HOME}>
-            <h2>Foxview Candle</h2>
-          </Link>
+          <div className="logo">
+            <Link onClick={onClickLink} to="/"><img alt="Logo" src={logo} /></Link>
+          </div>
         </div>
-  <BasketToggle>
+        <div className="dropdown">
+          <button className="dropbtn">
+            <MenuOutlined style={{ fontSize: '2rem' }} onClick={() => setIsOpen(!isOpen)} />
+          </button>
+          {isOpen && (
+            <div className="dropdown-content">
+              <Link to={HOME}>Home</Link>
+              <Link to={SHOP}>Shop</Link>
+              <Link to={SIGNIN}>Sign In</Link>
+            </div>
+          )}
+        </div>
+        <BasketToggle>
           {({ onClickToggle }) => (
             <button
               className="button-link navigation-menu-link basket-toggle"
@@ -45,18 +56,6 @@ const Navigation = (props) => {
             </button>
           )}
         </BasketToggle>
-        <div className="dropdown">
-  <button className="dropbtn">
-    <MenuOutlined style={{ fontSize: '2rem' }} />
-  </button>
-  <div className="dropdown-content">
-    <Link to={HOME}>Home</Link>
-    <Link to={SHOP}>Shop</Link>
-    <Link to={SIGNIN}>Sign In</Link>
-  </div>
-</div>
-
-      
         <ul className="mobile-navigation-menu">
           {/* {user ? (
             <li className="mobile-navigation-item">

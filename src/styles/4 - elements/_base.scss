@@ -66,17 +66,18 @@ h6 {
 // }
 
 #app {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   max-width: 2400px;
+
 }
 
 .content {
   width: 100%;
   min-height: 100vh;
   position: relative;
-  padding: $top 0;
+  padding: 5rem 0;
   display: flex;
   animation: fadeIn .5s ease;
 

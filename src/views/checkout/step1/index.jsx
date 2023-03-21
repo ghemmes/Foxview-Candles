@@ -1,3 +1,85 @@
+// import React, { useState } from "react";
+// import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+
+// const CheckoutForm = ({ basket, subtotal }) => {
+//   const stripe = useStripe();
+//   const elements = useElements();
+//   const [email, setEmail] = useState("");
+//   const [phone, setPhone] = useState("");
+//   const [address, setAddress] = useState("");
+//   const [errorMessage, setErrorMessage] = useState(null);
+
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+
+//     const { error, paymentMethod } = await stripe.createPaymentMethod({
+//       type: "card",
+//       card: elements.getElement(CardElement),
+//       billing_details: {
+//         email,
+//         phone,
+//         address: {
+//           line1: address,
+//         },
+//       },
+//     });
+
+//     if (!error) {
+//       console.log(paymentMethod); // Use this to send to server
+//       // Add more logic here to submit other data to server (e.g. email, phone, address, basket items, subtotal)
+//     } else {
+//       setErrorMessage(error.message);
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <label htmlFor="email">Email</label>
+//       <input
+//         type="email"
+//         id="email"
+//         value={email}
+//         onChange={(event) => setEmail(event.target.value)}
+//         required
+//       />
+
+//       <label htmlFor="phone">Phone</label>
+//       <input
+//         type="tel"
+//         id="phone"
+//         value={phone}
+//         onChange={(event) => setPhone(event.target.value)}
+//         required
+//       />
+
+//       <label htmlFor="address">Address</label>
+//       <textarea
+//         id="address"
+//         value={address}
+//         onChange={(event) => setAddress(event.target.value)}
+//         required
+//       />
+
+//       <label htmlFor="card-element">Credit or debit card</label>
+//       <CardElement id="card-element" />
+
+//       {errorMessage && (
+//         <div className="error-message">{errorMessage}</div>
+//       )}
+
+//       <button type="submit" disabled={!stripe}>
+//         Pay {subtotal}
+//       </button>
+//     </form>
+//   );
+// };
+
+// export default CheckoutForm;
+
+
+
+
+// *********************************************************************
 import { ArrowRightOutlined, ShopOutlined } from '@ant-design/icons';
 import { BasketItem } from '@/components/basket';
 import { CHECKOUT_STEP_2 } from '@/constants/routes';
@@ -9,9 +91,22 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { StepTracker } from '../components';
 import withCheckout from '../hoc/withCheckout';
+// import React, { useState } from "react";
+// import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+// import { ArrowRightOutlined, ShopOutlined } from '@ant-design/icons';
+// import { BasketItem } from '@/components';
+// import { CHECKOUT_STEP_2 } from '@/constants/routes';
+// import { displayMoney } from '@/helpers/utils';
+// import { useDocumentTitle, useScrollTop } from '@/hooks';
+// import PropType from 'prop-types';
+// import { StepTracker } from '../components';
+// import withCheckout from '../hoc/withCheckout';
+
+
+
 
 const OrderSummary = ({ basket, subtotal }) => {
-  useDocumentTitle('Check Out Step 1 | Salinaka');
+  useDocumentTitle('Check Out Step 1 | Foxview Candles');
   useScrollTop();
   const dispatch = useDispatch();
   const history = useHistory();
@@ -34,7 +129,10 @@ const OrderSummary = ({ basket, subtotal }) => {
               product={product}
             />
           ))}
-        </div>
+        </div>     
+         {/* add form to collect email, phone, address, and card details */}
+        {/* <CheckoutForm basket={basket} subtotal={subtotal} /> */}
+        
         <br />
         <div className="basket-total text-right">
           <p className="basket-total-title">Subtotal:</p>
@@ -61,8 +159,14 @@ const OrderSummary = ({ basket, subtotal }) => {
             <ArrowRightOutlined />
           </button>
         </div>
-      </div>
+      </div> 
+
+
+
     </div>
+   
+
+    
   );
 };
 

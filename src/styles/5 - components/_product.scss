@@ -593,50 +593,6 @@ margin-top: 10rem;
 }
 
 
-
-
-// .contact-info-header1 {
-// // bring text to top of div
-
-//   text-align: left;
-// }
-
-// .contact-container {
-//   display: flex;
-//   // justify-content: space-between;
-//   background: $banner-bg;
-//   justify-content: center;
-//   align-items: center;
-//   border: 1.2px solid $border-color;
-
-// }
-
-// .contact-form {
-//   width: 50%;
-//   height: 100%;
-//   background: $banner-bg-01;
-//   padding: 30px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   text-align: center;
-// }
-
-
-
-// // }
-// .contact-info {
-//   width: 50%;
-//   height: auto;
-
-//   // bring to top of div
-//   text-align: left;
-
-
-
-// }
-
-
 .contact-form-header label {
   display: block;
   font-weight: bold;
@@ -672,7 +628,19 @@ margin-top: 10rem;
 }
 
 
+// add mobile view where the contact section is stacked on top of each other with the form on the bottom
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+  .contact-form {
+    order: 1;
+  }
+  .contact-info {
 
+    min-height: 300px;
+  }
+}
 
 
 

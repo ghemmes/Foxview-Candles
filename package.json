@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
+    "@stripe/react-stripe-js": "^2.0.0",
     "firebase": "^8.4.3",
     "formik": "^2.2.6",
     "history": "^4.10.0",
